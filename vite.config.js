@@ -17,7 +17,7 @@ export default defineConfig({
   define: {
     "process.env.API_URL": JSON.stringify(
       process.env.NODE_ENV === "production"
-        ? "https://rateengine.ship.cars/api/v2" // Production API URL
+        ? "https://rateengine.ship.cars/api" // Production API URL
         : "/api" // Proxy URL for development
     ),
   },
