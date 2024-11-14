@@ -75,16 +75,21 @@ export default {
   methods: {
     async fetchYears() {
       //       "http://localhost:3000/rest/api-crm-ticket-pub/ticket",
+      const isProduction = import.meta.env.PROD;
+      const apiBaseURL = isProduction
+        ? "https://rateengine.ship.cars/api/v2"
+        : "/api";
+
+      const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
+      //  "api/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
+
       try {
-        const response = await axios.get(
-          "api/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
-          {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await axios.get(apiUrl, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        });
 
         this.years = response.data;
       } catch (error) {
@@ -116,6 +121,7 @@ export default {
     },
     async fetchModels() {
       console.log(this.selectedMake, "selected make");
+
       try {
         const response = await axios.get(
           `api/v2/vehicles/models/?year=${this.selectedYear.year}&make=${this.selectedMake.make}&token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`,
