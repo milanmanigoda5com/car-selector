@@ -80,7 +80,7 @@ export default {
 
       const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
       const newUrl =
-        "/api/proxy/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef"; // Call the serverless function
+        "/api/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef"; // Call the serverless function
 
       try {
         const response = await axios.get(newUrl, {
