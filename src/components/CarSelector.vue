@@ -79,11 +79,11 @@ export default {
       const apiBaseURL = isProduction ? "https://rateengine.ship.cars" : "/api";
 
       const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
-      //  "api/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
-      const newApi =
-        "https://rateengine.ship.cars/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef";
+      const newUrl =
+        "/api/proxy/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef"; // Call the serverless function
+
       try {
-        const response = await axios.get(newApi, {
+        const response = await axios.get(newUrl, {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
