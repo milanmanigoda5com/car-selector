@@ -77,7 +77,7 @@ export default {
       //       "http://localhost:3000/rest/api-crm-ticket-pub/ticket",
       const isProduction = import.meta.env.PROD;
       const apiBaseURL = isProduction
-        ? "https://rateengine.ship.cars/api/v2"
+        ? "https://rateengine.ship.cars/api"
         : "/api";
 
       const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
