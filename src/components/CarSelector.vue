@@ -74,11 +74,9 @@ export default {
   },
   methods: {
     async fetchYears() {
-      //       "http://localhost:3000/rest/api-crm-ticket-pub/ticket",
+      // "https://rateengine.ship.cars/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
       const isProduction = import.meta.env.PROD;
-      const apiBaseURL = isProduction
-        ? "https://rateengine.ship.cars/api"
-        : "/api";
+      const apiBaseURL = isProduction ? "https://rateengine.ship.cars" : "/api";
 
       const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
       //  "api/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
