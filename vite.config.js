@@ -13,4 +13,12 @@ export default defineConfig({
       },
     },
   },
+  // Configure different API URL based on production or development
+  define: {
+    "process.env.API_URL": JSON.stringify(
+      process.env.NODE_ENV === "production"
+        ? "https://rateengine.ship.cars/api/v2" // Production API URL
+        : "/api" // Proxy URL for development
+    ),
+  },
 });
