@@ -80,9 +80,10 @@ export default {
 
       const apiUrl = `${apiBaseURL}/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`;
       //  "api/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef",
-
+      const newApi =
+        "https://rateengine.ship.cars/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef";
       try {
-        const response = await axios.get(apiUrl, {
+        const response = await axios.get(newApi, {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
